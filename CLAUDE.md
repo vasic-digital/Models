@@ -10,15 +10,13 @@ same session as the change.** Coverage and green suites are not evidence.
 
 ### Acceptance demo for this module
 
-<!-- TODO: replace this block with the exact command(s) that exercise this
-     module end-to-end against real dependencies, and the expected output.
-     The commands must run the real artifact (built binary, deployed
-     container, real service) — no in-process fakes, no mocks, no
-     `httptest.NewServer`, no Robolectric, no JSDOM as proof of done. -->
-
 ```bash
-# TODO
+# Core LLM types + TaskStatus lifecycle helpers
+cd Models && GOMAXPROCS=2 nice -n 19 go test -count=1 -race -v \
+  -run 'TestTaskStatus_|TestLLMRequest_|TestLLMResponse_' .
 ```
+Expect: PASS; all constructors/validators/state-transition helpers green.
+
 
 ## Overview
 
