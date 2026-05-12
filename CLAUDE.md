@@ -347,3 +347,14 @@ test added going forward MUST pass an honest self-review against
 this taxonomy before being committed.
 
 <!-- END const035-strengthening-2026-04-29 -->
+
+
+## Article XI §11.9 — Anti-Bluff Forensic Anchor (verbatim user mandate)
+
+> Verbatim user mandate: *"We had been in position that all tests do execute with success and all Challenges as well, but in reality the most of the features does not work and can't be used! This MUST NOT be the case and execution of tests and Challenges MUST guarantee the quality, the completion and full usability by end users of the product!"*
+>
+> Operative rule: **The bar for shipping is not "tests pass" but "users can use the feature."** Every PASS in this codebase MUST carry positive runtime evidence captured during execution. Metadata-only / configuration-only / absence-of-error / grep-based PASS without runtime evidence are critical defects regardless of how green the summary line looks. No false-success results are tolerable.
+
+**Cascade requirement:** this anchor (verbatim quote + operative rule) MUST appear in every owned-by-us submodule's `CONSTITUTION.md` / `CLAUDE.md` / `AGENTS.md`. Non-compliance is a release blocker. Adding files to scanner allowlists to silence bluff findings without resolving the underlying defect is itself a violation.
+
+**Tests AND Challenges (HelixQA) are bound equally** — a Challenge that scores PASS on a non-functional feature is the same class of defect as a unit test that does. Both must produce positive end-user evidence.

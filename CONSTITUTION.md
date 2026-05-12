@@ -153,3 +153,14 @@ challenges/scripts/host_no_auto_suspend_challenge.sh` to confirm the
 hardening is intact. If hardening is intact AND no suspend
 broadcast appears in journal, the perceived event was build-pressure
 sluggishness, not a power transition.
+
+
+## Article XI §11.9 — Anti-Bluff Forensic Anchor (verbatim user mandate)
+
+> Verbatim user mandate: *"We had been in position that all tests do execute with success and all Challenges as well, but in reality the most of the features does not work and can't be used! This MUST NOT be the case and execution of tests and Challenges MUST guarantee the quality, the completion and full usability by end users of the product!"*
+>
+> Operative rule: **The bar for shipping is not "tests pass" but "users can use the feature."** Every PASS in this codebase MUST carry positive runtime evidence captured during execution. Metadata-only / configuration-only / absence-of-error / grep-based PASS without runtime evidence are critical defects regardless of how green the summary line looks. No false-success results are tolerable.
+
+**Cascade requirement:** this anchor (verbatim quote + operative rule) MUST appear in every owned-by-us submodule's `CONSTITUTION.md` / `CLAUDE.md` / `AGENTS.md`. Non-compliance is a release blocker.
+
+**Tests AND Challenges (HelixQA) are bound equally** — a Challenge that scores PASS on a non-functional feature is the same class of defect as a unit test that does. Both must produce positive end-user evidence.
