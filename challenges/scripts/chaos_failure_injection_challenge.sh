@@ -3,9 +3,9 @@
 # for Models per CONST-035 + CONST-050(B). Cascade per CONST-051(A).
 
 set -uo pipefail
-HEALTH_URL="${MODELS_HEALTH_URL:-}"
-CHAOS_HOST="${MODELS_CHAOS_HOST:-localhost}"
-CHAOS_PORT="${MODELS_CHAOS_PORT:-}"
+HEALTH_URL="${MODELS_VD_HEALTH_URL:-}"
+CHAOS_HOST="${MODELS_VD_CHAOS_HOST:-localhost}"
+CHAOS_PORT="${MODELS_VD_CHAOS_PORT:-}"
 LEGIT_REQS="${CHAOS_LEGIT_REQUESTS:-100}"
 MIN_PCT="${CHAOS_LEGIT_MIN_PASS_PCT:-95}"
 
@@ -13,7 +13,7 @@ echo "=== Models Chaos Failure-Injection Challenge ==="
 echo "  url=$HEALTH_URL host=${CHAOS_HOST}:${CHAOS_PORT}"
 
 if [[ -z "$HEALTH_URL" ]] || [[ -z "$CHAOS_PORT" ]]; then
-    echo "[1/6] SKIP: MODELS_HEALTH_URL/_PORT unset — SKIP-OK: #env-no-target"
+    echo "[1/6] SKIP: MODELS_VD_HEALTH_URL/_PORT unset — SKIP-OK: #env-no-target"
     echo "=== Models Chaos Challenge: PASSED (SKIP-OK) ==="
     exit 0
 fi

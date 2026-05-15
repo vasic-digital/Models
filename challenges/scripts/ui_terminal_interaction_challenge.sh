@@ -3,7 +3,7 @@
 # Models per CONST-035 + CONST-050(B). Cascade per CONST-051(A).
 
 set -uo pipefail
-BIN_PATH="${MODELS_BIN:-}"
+BIN_PATH="${MODELS_VD_BIN:-}"
 TIMEOUT_SEC="${UI_TIMEOUT_SEC:-30}"
 USER_HOSTILE=('panic:' 'goroutine [0-9]+ \[running\]:' 'runtime error:' 'segmentation fault' 'fatal error:')
 
@@ -11,7 +11,7 @@ echo "=== Models UI Terminal-Interaction Challenge ==="
 echo "  bin=$BIN_PATH timeout=${TIMEOUT_SEC}s"
 
 if [[ -z "$BIN_PATH" ]] || [[ ! -x "$BIN_PATH" ]]; then
-    echo "[1/4] SKIP: MODELS_BIN not set — SKIP-OK: #env-binary-missing"
+    echo "[1/4] SKIP: MODELS_VD_BIN not set — SKIP-OK: #env-binary-missing"
     echo "=== Models UI Challenge: PASSED (SKIP-OK) ==="
     exit 0
 fi
