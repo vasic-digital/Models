@@ -1,0 +1,60 @@
+{
+  "_comment": "Round-268 bilingual fixture for digital.vasic.models. Five locales — en, sr (Cyrillic), ja (Japanese), ar (Arabic, RTL), zh-CN (Han). Each entry carries an LLM prompt + a task name + a tool description + a content blob in the target locale. The runner uses these inputs to drive User, LLMRequest, LLMResponse, BackgroundTask, MCPServer, CompletionItem, Diagnostic, Message, Tool, ChainStep-like flows end-to-end against real models package surface — JSON round-trips MUST preserve rune content byte-exact, status helpers MUST return semantically correct booleans, NewBackgroundTask MUST populate defaults, ProtocolType constants MUST be honoured by metric records.",
+  "inputs": [
+    {
+      "locale": "en",
+      "prompt": "Summarise this paragraph in two sentences.",
+      "username": "alice",
+      "task_name": "summary-en",
+      "tool_description": "Read a file from local disk and return its content.",
+      "diagnostic_message": "Variable declared but never used.",
+      "completion_label": "fmt.Println",
+      "mcp_command": "/usr/local/bin/mcp-server",
+      "expected_min_runes": 30
+    },
+    {
+      "locale": "sr",
+      "prompt": "Сажми овај пасус у две реченице.",
+      "username": "марко",
+      "task_name": "summary-sr",
+      "tool_description": "Читај фајл са локалног диска и врати његов садржај.",
+      "diagnostic_message": "Променљива декларисана али се не користи.",
+      "completion_label": "fmt.Println",
+      "mcp_command": "/usr/local/bin/mcp-server",
+      "expected_min_runes": 20
+    },
+    {
+      "locale": "ja",
+      "prompt": "この段落を二文に要約してください。",
+      "username": "佐藤",
+      "task_name": "summary-ja",
+      "tool_description": "ローカルディスクからファイルを読み取り、その内容を返します。",
+      "diagnostic_message": "変数が宣言されていますが使用されていません。",
+      "completion_label": "fmt.Println",
+      "mcp_command": "/usr/local/bin/mcp-server",
+      "expected_min_runes": 15
+    },
+    {
+      "locale": "ar",
+      "prompt": "لخص هذه الفقرة في جملتين.",
+      "username": "علي",
+      "task_name": "summary-ar",
+      "tool_description": "قراءة ملف من القرص المحلي وإرجاع محتواه.",
+      "diagnostic_message": "تم تعريف المتغير ولكن لم يتم استخدامه.",
+      "completion_label": "fmt.Println",
+      "mcp_command": "/usr/local/bin/mcp-server",
+      "expected_min_runes": 20
+    },
+    {
+      "locale": "zh-CN",
+      "prompt": "用两句话总结这段。",
+      "username": "小明",
+      "task_name": "summary-zh",
+      "tool_description": "从本地磁盘读取文件并返回其内容。",
+      "diagnostic_message": "变量已声明但从未使用。",
+      "completion_label": "fmt.Println",
+      "mcp_command": "/usr/local/bin/mcp-server",
+      "expected_min_runes": 8
+    }
+  ]
+}

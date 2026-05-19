@@ -3,6 +3,8 @@
 *.dll
 *.so
 *.dylib
+*.a
+*.o
 /orchestrator
 
 # Test
@@ -13,6 +15,7 @@ coverage.html
 # IDE
 .idea/
 .vscode/
+.history/
 *.swp
 *.swo
 *~
@@ -21,13 +24,29 @@ coverage.html
 .DS_Store
 Thumbs.db
 
-# Environment
+# Environment / secrets (CONST-053 + CONST-042)
 .env
 .env.local
 .env.*.local
+.env.*
+*.pem
+*.key
+*.crt
+id_rsa*
+id_ed25519*
+.netrc
+secrets/
 
 # Build
 /bin/
 /dist/
+/build/
+/out/
+target/
 
+# Generated reports / logs
+*.log
+*.tmp
+*.orig
+*.rej
 reports/demos/
