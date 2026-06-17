@@ -19,7 +19,7 @@ UPSTREAMS_DIR="${SCRIPT_DIR}/Upstreams"
 
 if [[ ! -d "${UPSTREAMS_DIR}" ]]; then
     echo "Error: Upstreams directory not found at ${UPSTREAMS_DIR}" >&2
-    echo "Create Upstreams/ with GitHub.sh, GitLab.sh, GitFlic.sh, GitVerse.sh" >&2
+    echo "Create Upstreams/ with GitHub.sh, GitLab.sh" >&2
     exit 1
 fi
 

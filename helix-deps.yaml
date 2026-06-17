@@ -1,0 +1,12 @@
+# helix-deps.yaml — models Submodule-Dependency Manifest (HelixConstitution §11.4.31)
+# Catalogue-Check (§11.4.74): inspected go.mod (package.json / requirements.txt /
+#   pyproject.toml / Cargo.toml absent); own-org deps: none.
+#   go.mod requires only third-party modules — github.com/stretchr/testify,
+#   github.com/davecgh/go-spew, github.com/pmezard/go-difflib, gopkg.in/yaml.v3 —
+#   none under vasic-digital or HelixDevelopment. Module: digital.vasic.models.
+schema_version: 1
+deps: []
+transitive_handling:
+  recursive: true
+  conflict_resolution: operator-required
+language_specific_subtree: false
